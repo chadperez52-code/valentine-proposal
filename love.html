@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #d6336c;
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
+    .slideshow-container {
+      position: relative;
+      margin: 40px auto;
+      max-width: 800px; /* keeps pictures at natural size */
+    }
+    .slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 1.5s ease-in; /* fade effect */
+    }
+    .slide.active {
+      display: block;
+      opacity: 1;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    /* Final note full screen */
+    .note {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+      color: #ffccd5;
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Forever grateful to have you by my side. Thank you for always being my constant. Ever thine, ever mine, ever ours  ❤️</h1>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="music1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="slideshow-container">
+    <!-- 10 picture slides -->
+    <div class="slide"><img src="AA1.jpeg" alt="Picture 1"></div>
+    <div class="slide"><img src="AA2.jpg" alt="Picture 2"></div>
+    <div class="slide"><img src="aa3.jpg" alt="Picture 3"></div>
+    <div class="slide"><img src="aa4.jpg" alt="Picture 4"></div>
+    <div class="slide"><img src="aa5.jpg" alt="Picture 5"></div>
+    <div class="slide"><img src="aa6.jpg" alt="Picture 6"></div>
+    <div class="slide"><img src="aa7.jpg" alt="Picture 7"></div>
+    <div class="slide"><img src="aa8.jpg" alt="Picture 8"></div>
+    <div class="slide"><img src="aa9.jpg" alt="Picture 9"></div>
+    <div class="slide"><img src="aa10.jpg" alt="Picture 10"></div>
+
+    <!-- Final Slide: Note -->
+    <div class="slide">
+      <div class="note">I love you always, in all ways.</div>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+    let slideshowInterval;
+
+    function showSlide() {
+      // Hide all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      // Show current slide with fade effect
+      slides[slideIndex].classList.add("active");
+
+      // If this is the final note slide, stop autoplay
+      if (slideIndex === slides.length - 1) {
+        clearInterval(slideshowInterval);
+      } else {
+        slideIndex++;
+      }
+    }
+
+    // Show first slide immediately
+    showSlide();
+    // Change slide every 4 seconds until final note
+    slideshowInterval = setInterval(showSlide, 4000);
+  </script>
+</body>
+</html>

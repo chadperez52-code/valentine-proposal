@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Proposal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #ffe6e6;
+    }
+    h1 {
+      color: #d6336c;
+      font-size: 3em;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      margin: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+    #no {
+      background-color: #666;
+      color: white;
+      position: absolute;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Your picture -->
+  <img src="meandaa.jpg" alt="Me and my girl">
+
+  <h1>Will you be my Valentine?</h1>
+  <div class="buttons">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+
+    // Move "No" button when hovered
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 50));
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // Show message and redirect when "Yes" is clicked
+    yesBtn.addEventListener("click", () => {
+      alert("Thank you for always being my Baby. I LOVE YOU SO MUCH!");
+      window.location.href = "love.html"; // redirect to second page
+    });
+  </script>
+</body>
+</html>
